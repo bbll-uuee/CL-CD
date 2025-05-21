@@ -1,14 +1,14 @@
 name: Run ClearML Task
 
 on:
-  pull_request:
-    branches: [main]
+  push:
+    branches: [main]  # ✅ 建议临时换成 push 更好测试
 
 jobs:
   run_pipeline:
     runs-on: ubuntu-latest
 
-    env:  # ✅ env:  # Global environment variables for all steps
+    env:
       CLEARML_API_ACCESS_KEY: ${{ secrets.CLEARML_API_ACCESS_KEY }}
       CLEARML_API_SECRET_KEY: ${{ secrets.CLEARML_API_SECRET_KEY }}
       CLEARML_API_HOST: ${{ secrets.CLEARML_API_HOST }}
@@ -34,5 +34,4 @@ jobs:
 
       - name: Run pipeline
         run: |
-          python s1_dataset_artifact.py
-      
+          python s1_dataset_artifact.py  # ✅ 改成正确文件名
