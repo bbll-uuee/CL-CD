@@ -2,7 +2,7 @@ name: Run ClearML Task
 
 on:
   push:
-    branches: [main]  # ✅ 建议临时换成 push 更好测试
+    branches: [main]  
 
 jobs:
   run_pipeline:
