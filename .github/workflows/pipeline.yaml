@@ -35,5 +35,3 @@ jobs:
       - name: Run pipeline
         run: |
           python s1_dataset_artifact.py
-
-          A
